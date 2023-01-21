@@ -3,13 +3,13 @@ import { PlayIcon } from "@heroicons/react/24/solid";
 const Clips = ({ video }) => {
   console.log(video);
   return (
-    <div className="relative h-28 w-32 rounded-xl overflow-hidden group cursor-pointer transition-all duration-300 lg:w-28 md:w-20 sm:w-16 lg:h-24 md:h-20 sm:h-14">
+    <div className=" group relative w-24 h-24  rounded-xl overflow-hidden group cursor-pointer transition-all duration-300 xl:w-16 xl:h-16 ">
       <img
         src={video.imgsrc}
         alt="img/clips"
         className="z-10 opacity-100 inset-0 flex rounded-xl h-full w-full object-cover absolute transition-opacity duration-500"
       />
-      <div className="bg-white blur-effect-theme absolute top-11 left-11 lg:top-8 lg:left-9 sm:top-4 sm:left-5 opacity-100 z-[100] w-8 h-8 md:w-5 md:h-5 flex items-center justify-center rounded-full">
+      <div className="bg-white blur-effect-theme absolute top-[35%] xl:top-[25%] xl:left-[25%] left-[35%] md:top-[35%] md:left-[35%] opacity-100 z-[100] w-8 h-8 md:w-5 md:h-5 flex items-center justify-center rounded-full group-hover:hidden">
         <PlayIcon className="icon-style  text-slate-900 md:w-3 md:h-3 " />
       </div>
       <video

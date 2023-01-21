@@ -5,7 +5,7 @@ const Footer = ({ footerAPI }) => {
   const date = new Date();
 
   return (
-    <footer className="bg-theme pt-7 pb-5">
+    <footer className="bg-theme pt-7 ">
       <div className="nike-container text-slate-200">
         <div className="grid items-start grid-cols-3  w-full m-auto md:max-w-none md:gap=4">
           {titles.map((val, i) => (
@@ -30,12 +30,14 @@ const Footer = ({ footerAPI }) => {
             </ul>
           ))}
         </div>
-        <div className="mt-5 text-center">
-          <p className="text-sm md:text-center">
-            Copyright &copy; All Reserved Rights {date.getFullYear()} ||
-            Developed by <span className="font-semibold"> LWHA</span>
-          </p>
-        </div>
+      </div>
+      <div className="w-11/12 pb-3 text-slate-200 flex justify-between mx-auto mt-5 text-center relative bottom-0">
+        <p className="text-sm  text-start md:text-center">
+          Copyright &copy; All Reserved Rights {date.getFullYear()} ||
+        </p>
+        <p>
+          Developed by <span className="font-semibold"> LWHA</span>
+        </p>
       </div>
     </footer>
   );

@@ -25,6 +25,7 @@ const Navbar = () => {
       })
     );
   };
+  console.log("cartItems", cartItems);
 
   const onNavScroll = () => {
     if (window.scrollY > 30) {
@@ -45,8 +46,8 @@ const Navbar = () => {
       <header
         className={
           !sticky
-            ? `absolute top-7 left-0 right-0 opacity-100 z-50`
-            : "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center shadow-sm opacity-100 z-[200] blur-effect-theme"
+            ? `fixed top-0 left-0 h-[9vh] flex items-center right-0 opacity-100 z-50`
+            : "fixed top-0 left-0  right-0 h-[9vh] flex items-center justify-center shadow-sm opacity-100 z-[200] blur-effect-theme"
         }
       >
         <nav className="flex items-center justify-between nike-container">
@@ -84,13 +85,15 @@ const Navbar = () => {
                     sticky && "text-slate-900 transition-all duration-300"
                   }`}
                 />
-                <span
-                  className={`absolute -top-1 -right-2 bg-red-400 text-white shadow-slate-100
+                {cartItems.length > 0 && (
+                  <span
+                    className={`absolute -top-1 -right-2 bg-red-400 text-white shadow-slate-100
                   w-4 h-4 text-[0.6rem] leading-tight font-medium rounded flex justify-center items-center cursor-pointer hover:scale-110 transition-all duration-300
                   `}
-                >
-                  {totalQty}
-                </span>
+                  >
+                    {totalQty}
+                  </span>
+                )}
               </button>
             </li>
           </ul>

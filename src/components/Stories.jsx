@@ -57,7 +57,7 @@ const Stories = ({ story }) => {
                   <h1 className="text-base font-semibold lg:text-sm h-14 my-1 flex items-center">
                     {val.title}
                   </h1>
-                  <p className="h-auto card-text text-sm text-justify lg:text-xs overflow-hidden">
+                  <p className="h-auto card-text text-sm text-start lg:text-xs overflow-hidden">
                     {val.text}
                   </p>
                 </div>

@@ -37,7 +37,7 @@ const Items = ({
     >
       {/* Title Text */}
       <div
-        className={`grid items-center ${
+        className={`grid items-center gap-2 ${
           wide ? "justify-items-start" : "justify-items-center"
         }`}
       >
@@ -80,14 +80,16 @@ const Items = ({
       {/* Img */}
       <div
         className={`flex items-center ${
-          wide ? "absolute top-5 right-1" : "justify-center"
+          wide ? "absolute top-10  right-1" : "justify-center"
         } mt-5`}
       >
         <img
           src={img}
           alt={`img/item-img/${id}`}
           className={`transitions-theme hover:-rotate-12 ${
-            wide ? "h-auto w-64  xl:w-48 -rotate-[35deg]" : "h-36 w-64"
+            wide
+              ? "h-auto w-32  xl:w-48 lg:w-28  md:w-36 -rotate-[35deg]"
+              : "h-36 w-64"
           }`}
         />
       </div>
