@@ -1,10 +1,11 @@
 import React from "react";
 
-const FlexContent = ({ reverse, endpoint }) => {
+const FlexContent = ({ id, reverse, endpoint }) => {
   const { title, heading, subtitle, text, img, url, btn } = endpoint;
   return (
     <section
-      className={`flex lg:gap-12 gap-8 items-center justify-between lg:flex-col lg:justify-center nike-container ${
+      id={id}
+      className={`flex lg:gap-12 gap-8 items-center justify-between lg:flex-col lg:justify-center mt-20 ${
         reverse ? "flex-row-reverse" : "flex-row"
       }`}
     >

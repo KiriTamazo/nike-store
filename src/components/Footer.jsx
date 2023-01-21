@@ -31,13 +31,15 @@ const Footer = ({ footerAPI }) => {
           ))}
         </div>
       </div>
-      <div className="w-11/12 pb-3 text-slate-200 flex justify-between mx-auto mt-5 text-center relative bottom-0">
-        <p className="text-sm  text-start md:text-center">
-          Copyright &copy; All Reserved Rights {date.getFullYear()} ||
-        </p>
-        <p>
-          Developed by <span className="font-semibold"> LWHA</span>
-        </p>
+      <div className="bg-slate-800 flex items-center">
+        <div className="w-11/12 py-2 text-slate-200 flex justify-between mx-auto  text-center relative bottom-0">
+          <p className="text-sm  text-start md:text-center">
+            Copyright &copy; All Reserved Rights {date.getFullYear()} ||
+          </p>
+          <p>
+            Developed by <span className="font-semibold"> LWHA</span>
+          </p>
+        </div>
       </div>
     </footer>
   );

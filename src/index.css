@@ -7,10 +7,25 @@
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(60, 60, 60);
+    border-radius: 100px;
+  }
+  body {
+    scroll-behavior: smooth;
   }
   img {
     object-fit: contain;
   }
+
   /* container */
   .nike-container {
     @apply w-11/12  my-10 mx-auto;
@@ -92,4 +107,28 @@
   -webkit-line-clamp: 3;
   overflow: hidden;
   -webkit-box-orient: vertical;
+}
+
+/* animation */
+.animate {
+  animation-delay: 500ms;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+.slideInDown {
+  animation-name: slideInDown;
+}
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.active {
+  @apply font-bold text-red-400;
 }

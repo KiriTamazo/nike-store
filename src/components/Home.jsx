@@ -8,6 +8,7 @@ const Home = ({ heroapi }) => {
   return (
     <>
       <section
+        id="#"
         className="relative h-auto w-auto
       flex flex-col
       "
@@ -52,6 +53,7 @@ const Home = ({ heroapi }) => {
               {sociallinks?.map((social, index) => (
                 <SocialLink key={index} icon={social.icon} />
               ))}
+              
             </div>
             {/* Social Links */}
           </div>

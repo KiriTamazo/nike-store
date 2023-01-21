@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Cart,
   FlexContent,
@@ -8,6 +8,7 @@ import {
   Sales,
   Stories,
 } from "./components";
+import Sidebar from "./components/Sidebar";
 import {
   footerAPI,
   heroapi,
@@ -17,19 +18,26 @@ import {
   story,
   toprateslaes,
 } from "./data/data";
+import useMediaQuery from "./hooks/useMediaQuery";
 
 const App = () => {
+  const matches = useMediaQuery("(max-width:768px)");
+  const [open, setOpen] = useState(false);
+  console.log(open);
   return (
     <>
-      <Navbar />
+      <Navbar matches={matches} open={open} setOpen={setOpen} />
+      {matches && <Sidebar open={open} setOpen={setOpen} />}
       <Cart />
       <main className="flex flex-col gap-16 relative">
         <Home heroapi={heroapi} />
-        <Sales endpoint={popularsales} wide />
-        <FlexContent endpoint={highlight} reverse />
-        <Sales endpoint={toprateslaes} />
-        <FlexContent endpoint={sneaker} />
-        <Stories story={story} />
+        <Sales id="popularSale" endpoint={popularsales} wide>
+          <FlexContent endpoint={highlight} reverse />
+        </Sales>
+        <Sales id="topRatedSale" endpoint={toprateslaes}>
+          <FlexContent endpoint={sneaker} />
+        </Sales>
+        <Stories id="topStories" story={story} />
       </main>
       <Footer footerAPI={footerAPI} />
     </>

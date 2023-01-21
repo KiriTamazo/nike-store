@@ -2,10 +2,10 @@ import React from "react";
 import Items from "../mini-components/Items";
 import Title from "../mini-components/Title";
 
-const Sales = ({ wide, endpoint }) => {
+const Sales = ({ id, wide, endpoint, children }) => {
   const { title, items } = endpoint;
   return (
-    <section className="nike-container">
+    <section id={id} className="nike-container">
       <Title title={title} />
       <div
         className={`grid items-center justify-items-center ${
@@ -18,6 +18,7 @@ const Sales = ({ wide, endpoint }) => {
           <Items key={index} {...item} wide={wide} />
         ))}
       </div>
+      {children}
     </section>
   );
 };

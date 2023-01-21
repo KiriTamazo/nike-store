@@ -4,7 +4,7 @@ import { ClockIcon, HashtagIcon, HeartIcon } from "@heroicons/react/24/solid";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
-const Stories = ({ story }) => {
+const Stories = ({ id, story }) => {
   const { title, news } = story;
   const splideOptions = {
     perPage: 4,
@@ -22,7 +22,7 @@ const Stories = ({ story }) => {
     },
   };
   return (
-    <section className="nike-container mb-11">
+    <section id={id} className="nike-container mb-11">
       <Title title={title} />
       <div className="mt-7">
         <Splide options={splideOptions}>

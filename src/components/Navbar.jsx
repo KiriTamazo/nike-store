@@ -1,8 +1,4 @@
-import {
-  HeartIcon,
-  MagnifyingGlassIcon,
-  ShoppingBagIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, ShoppingBagIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/logo.png";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,8 +7,10 @@ import CartSlice, {
   selectTotalQty,
   setOpenCart,
 } from "../app/CartSlice";
+import useMediaQuery from "../hooks/useMediaQuery";
+import ListItem, { navLinks } from "../mini-components/ListItem";
 
-const Navbar = () => {
+const Navbar = ({ matches, setOpen }) => {
   const [sticky, setSticky] = useState(false);
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItem);
@@ -25,7 +23,6 @@ const Navbar = () => {
       })
     );
   };
-  console.log("cartItems", cartItems);
 
   const onNavScroll = () => {
     if (window.scrollY > 30) {
@@ -44,13 +41,23 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={
+        className={`${
           !sticky
             ? `fixed top-0 left-0 h-[9vh] flex items-center right-0 opacity-100 z-50`
-            : "fixed top-0 left-0  right-0 h-[9vh] flex items-center justify-center shadow-sm opacity-100 z-[200] blur-effect-theme"
-        }
+            : " shadow-sm opacity-100 z-[200] blur-effect-theme slideInDown"
+        } flex items-center justify-center fixed top-0 right-0 left-0 h-[12vh] z-200 animate`}
       >
         <nav className="flex items-center justify-between nike-container">
+          {/* Mobile Nav */}
+          {matches && (
+            <div onClick={() => setOpen(true)}>
+              <Bars3Icon
+                className={`icon-style ${sticky && "text-slate-900"}`}
+              />
+            </div>
+          )}
+
+          {/* Mobile Nav */}
           <div className="flex items-center">
             <img
               src={logo}
@@ -59,20 +66,13 @@ const Navbar = () => {
             />
           </div>
           <ul className="flex items-center justify-center gap-2">
-            <li className="grid items-center">
-              <MagnifyingGlassIcon
-                className={`icon-style ${
-                  sticky && "text-slate-900 transition-all duration-300"
-                }`}
-              />
-            </li>
-            <li className="grid items-center">
-              <HeartIcon
-                className={`icon-style ${
-                  sticky && "text-slate-900 transition-all duration-300"
-                }`}
-              />
-            </li>
+            {/* For Desktop Link */}
+            {!matches &&
+              navLinks.map((link, i) => (
+                <ListItem key={i} {...link} sticky={sticky} />
+              ))}
+            {/* For Desktop Link */}
+
             <li className="grid items-center">
               <button
                 onClick={onCartToggle}

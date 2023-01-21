@@ -29,6 +29,7 @@ const Cart = () => {
     );
   };
   const onClearCartItem = () => {
+    console.log("onClearCartItem");
     dispatch(setClearCartItem());
   };
 
@@ -43,7 +44,7 @@ const Cart = () => {
         className={`fixed top-0 left-0 right-0 bottom-0 blur-effect-theme w-full h-screen
         opacity-100 z-[250] ${
           cartState
-            ? "opacity-100 visible translate-x-0 "
+            ? " visible translate-x-0 "
             : "opacity-0 invisible translate-x-8"
         }
         `}
@@ -51,7 +52,7 @@ const Cart = () => {
         <div className="blur-effect-theme h-screen max-w-xl w-full absolute right-0">
           <CartCount
             onCartToggle={onCartToggle}
-            onClearCartItems={onClearCartItem}
+            onClearCartItem={onClearCartItem}
             totalQty={totalQty}
           />
 
