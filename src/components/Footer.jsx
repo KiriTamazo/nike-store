@@ -10,7 +10,7 @@ const Footer = ({ footerAPI }) => {
         <div className="grid sm:grid-cols-1 lg:grid-cols-2 justify-items-start items-start grid-cols-3  w-full m-auto md:max-w-none gap-12 md:gap-4">
           {links.map((list, i) => (
             <ul key={i} className="grid items-center gap-2 mt-2">
-              <h1 className="text-lg lg:text-base md:text-sm uppercase font-semibold cursor-pointer">
+              <h1 className="text-lg mb-4 lg:text-base md:text-sm uppercase font-semibold cursor-pointer">
                 {titles[i].title}
               </h1>
               {list.map((val, i) => (
