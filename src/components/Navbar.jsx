@@ -10,8 +10,7 @@ import CartSlice, {
 import useMediaQuery from "../hooks/useMediaQuery";
 import ListItem, { navLinks } from "../mini-components/ListItem";
 
-const Navbar = ({ matches, setOpen }) => {
-  const [sticky, setSticky] = useState(false);
+const Navbar = ({sticky, matches, setOpen }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItem);
   const totalQty = useSelector(selectTotalQty);
@@ -24,19 +23,7 @@ const Navbar = ({ matches, setOpen }) => {
     );
   };
 
-  const onNavScroll = () => {
-    if (window.scrollY > 30) {
-      setSticky(true);
-    } else {
-      setSticky(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", onNavScroll);
-    return () => {
-      window.removeEventListener("scroll", onNavScroll);
-    };
-  }, []);
+  
 
   return (
     <>
@@ -62,7 +49,9 @@ const Navbar = ({ matches, setOpen }) => {
             <img
               src={logo}
               alt="logo/img"
-              className={`w-16 h-auto  ${sticky && "filter brightness-0"}`}
+              className={`w-16 lg:w-12 h-auto  ${
+                sticky && "filter brightness-0"
+              }`}
             />
           </div>
           <ul className="flex items-center justify-center gap-2">

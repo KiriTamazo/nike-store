@@ -21,6 +21,7 @@
   }
   body {
     scroll-behavior: smooth;
+    position: relative;
   }
   img {
     object-fit: contain;

@@ -63,7 +63,6 @@ const Stories = ({ id, story }) => {
                 </div>
                 <div className="flex items-center justify-center px-4 w-full">
                   <a
-                    href="javascript:void(0)"
                     className="w-full bg-gradient-to-b from-slate-900  to-black shadow-md shadow-black
                   text-center text-slate-100 py-1.5 button-theme mb-2
                   "

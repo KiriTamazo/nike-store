@@ -17,7 +17,7 @@ const FlexContent = ({ id, reverse, endpoint }) => {
           {title}
         </h1>
         <p className="xl:text-sm my-4 text-slate-900">{text}</p>
-        <a href="javascript:void(0)" className="flex items-center">
+        <a className="flex items-center">
           <button className="bg-slate-900 button-theme text-slate-100 py-1.5">
             {btn}
           </button>
@@ -27,10 +27,10 @@ const FlexContent = ({ id, reverse, endpoint }) => {
         <img
           src={img}
           alt={`img/${heading}`}
-          className={`w-auto object-fill transitions-theme ${
+          className={`w-auto object-fill transitions-theme h-60 lg:h-56 md:h-36 sm:h-40 xsm:h-36 ${
             reverse
-              ? "h-60 lg:h-56 md:h-36 sm:h-36 xsm:h-36 rotate-6 hover:-rotate-12"
-              : "h-72 lh:h-64 md:h-48 sm:h-48 xsm:h-40 rotate-[19deg] hover:rotate-12"
+              ? " rotate-6 hover:-rotate-12"
+              : " rotate-[19deg] hover:rotate-12"
           }`}
         />
       </div>

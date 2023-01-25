@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Cart,
   FlexContent,
@@ -19,14 +19,29 @@ import {
   toprateslaes,
 } from "./data/data";
 import useMediaQuery from "./hooks/useMediaQuery";
+import ScrollToTop from "./mini-components/ScrollToTop";
 
 const App = () => {
+  const [sticky, setSticky] = useState(false);
+
   const matches = useMediaQuery("(max-width:768px)");
   const [open, setOpen] = useState(false);
-  console.log(open);
+  const onNavScroll = () => {
+    if (window.scrollY > 30) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", onNavScroll);
+    return () => {
+      window.removeEventListener("scroll", onNavScroll);
+    };
+  }, []);
   return (
     <>
-      <Navbar matches={matches} open={open} setOpen={setOpen} />
+      <Navbar sticky={sticky} matches={matches} open={open} setOpen={setOpen} />
       {matches && <Sidebar open={open} setOpen={setOpen} />}
       <Cart />
       <main className="flex flex-col gap-16 relative">
@@ -40,6 +55,7 @@ const App = () => {
         <Stories id="topStories" story={story} />
       </main>
       <Footer footerAPI={footerAPI} />
+      <ScrollToTop sticky={sticky} />
     </>
   );
 };

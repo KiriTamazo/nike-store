@@ -10,8 +10,8 @@ export const navLinks = [
 const ListItem = ({ to, title, sticky }) => {
   return (
     <li
-      className={`grid items-center mx-2 text-slate-900 ${
-        sticky && " text-slate-200"
+      className={`grid items-center mx-2  ${
+        window.scrollY > 30 && sticky ? "text-slate-900" : "text-slate-200"
       } cursor-pointer capitalize`}
     >
       <Link activeClass="active" smooth spy to={to} offset={-80}>

@@ -53,7 +53,6 @@ const Home = ({ heroapi }) => {
               {sociallinks?.map((social, index) => (
                 <SocialLink key={index} icon={social.icon} />
               ))}
-              
             </div>
             {/* Social Links */}
           </div>
@@ -62,7 +61,7 @@ const Home = ({ heroapi }) => {
             <img
               src={img}
               alt="hero-img/img"
-              className="mt-5 md:mt-5 w-[50vh] h-auto lg:h-[35vh] md:h[31vh] sm:h-[25vh] xsm:h-[19vh] transitions-theme -rotate-[25deg] hover:rotate-0 cursor-pointer"
+              className="mt-5 md:mt-5 w-[50vh] h-auto lg:h-[35vh] md:h[31vh] sm:h-[20vh] xsm:h-[19vh] transitions-theme -rotate-[25deg] hover:rotate-0 cursor-pointer"
             />
             {/* Product Img */}
           </div>
