@@ -10,7 +10,7 @@ import CartSlice, {
 import useMediaQuery from "../hooks/useMediaQuery";
 import ListItem, { navLinks } from "../mini-components/ListItem";
 
-const Navbar = ({sticky, matches, setOpen }) => {
+const Navbar = ({ sticky, matches, setOpen }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItem);
   const totalQty = useSelector(selectTotalQty);
@@ -23,8 +23,6 @@ const Navbar = ({sticky, matches, setOpen }) => {
     );
   };
 
-  
-
   return (
     <>
       <header
@@ -32,7 +30,7 @@ const Navbar = ({sticky, matches, setOpen }) => {
           !sticky
             ? `fixed top-0 left-0 h-[9vh] flex items-center right-0 opacity-100 z-50`
             : " shadow-sm opacity-100 z-[200] blur-effect-theme slideInDown"
-        } flex items-center justify-center fixed top-0 right-0 left-0 h-[12vh] z-200 animate`}
+        } flex items-center justify-center fixed top-0 right-0 left-0 md:h-[9vh] h-[12vh]  animate`}
       >
         <nav className="flex items-center justify-between nike-container">
           {/* Mobile Nav */}
